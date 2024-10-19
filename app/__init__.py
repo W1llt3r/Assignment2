@@ -2,7 +2,6 @@
 # pip install flask
 # pip install python-dotenv
 
-# To import the flask into the project use the following line:
 from flask import Flask
 from pymongo import MongoClient
 from dotenv import load_dotenv
@@ -16,7 +15,7 @@ db_password = os.environ.get("MONGODB_PASSWORD")
 
 # MongoDB Atlas Connection
 client = MongoClient(f"mongodb+srv://{db_username}:{db_password}@cluster0.bb9ww.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-db = client.app  # Replace "app" with your database name
-products_collection = db.products  # Replace products with your collection name
+db = client.shop_db
+products_collection = db.products
 
 from app import routes
